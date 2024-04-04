@@ -21,9 +21,12 @@ Options:
   -V, --version         Print version
 ```
 
-To find the only removable storage device, or return error if 0 or more than one removalbe device present:
+To find the only removable storage device, or return error if 0 or more than one removable device present:
 
-
+```console
+$ ./target/release/lsdisk -bre
+/dev/sda
+```
 
 # build and run
 
