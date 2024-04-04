@@ -4,16 +4,26 @@ Print a list of attached disk drives.  Designed as a simplifying replacement for
 
 # demo
 
-`lsdisk` prints the device path, the size of the block device in bytes, the model, and `[Fixed|Removable]`:
+`lsdisk` prints the device path, the size of the block device in bytes, the model, and `[fixed|removable]`, sorted by device name:
 
 ```console
-$ lsdisk 
-/dev/nvme0n1  0.9 TiB    CT1000P5PSSD8  Fixed     
-/dev/nvme1n1  1.8 TiB    CT2000P5PSSD8  Fixed     
-/dev/sda      58.9 GiB   STORAGE DEVIC… Removable 
+$ lsdisk --help
+Print a list of attached disks
+
+Usage: lsdisk [OPTIONS]
+
+Options:
+  -n, --non-loop-only   Return only non-loop devices
+  -r, --removable-only  Return only removable devices
+  -e, --expect-one      Return error if matching devices not one
+  -b, --brief           Only print the device path
+  -h, --help            Print help
+  -V, --version         Print version
 ```
 
-Loop devices are filtered from the list.
+To find the only removable storage device, or return error if 0 or more than one removalbe device present:
+
+
 
 # build and run
 
